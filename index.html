@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <style>
+
+            body {
+                background: #000;
+            }
+
+            .iframe-wrapper {
+                position: relative;
+                margin: 10vh auto;
+                width: 80vw;
+                height: 80vh;
+            }
+            
+            .iframe-wrapper iframe {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                margin: 0;
+                border: 0;
+            }
+        
+        </style>
+    </head>
+    <body>
+
+        <div>
+            <div class="iframe-wrapper">
+                <iframe scrolling='no' title='Lissajous flower' data-src='//codepen.io/enxaneta/embed/ZQbXZj/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'></iframe>
+            </div>
+
+            <div class="iframe-wrapper">
+                <iframe scrolling='no' title='three.js kaleidoscope tool' data-src='//codepen.io/auntdebris/embed/GQYagy/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'></iframe>
+            </div>
+
+            <div class="iframe-wrapper">
+                <iframe scrolling='no' title='Opening Flower' data-src='//codepen.io/arthurkirsz/embed/ilbqm/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'></iframe>
+            </div>
+            
+            <div class="iframe-wrapper">
+                <iframe scrolling='no' title='One Line Flower' data-src='//codepen.io/jagarikin/embed/vLMmeX/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'></iframe>
+            </div>
+            
+            <div class="iframe-wrapper">
+                <iframe scrolling='no' title='Sakura Animation using WebGl' data-src='//codepen.io/auntdebris/embed/XZxPjO/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'></iframe>
+            </div>
+            
+            <div class="iframe-wrapper">
+                <iframe scrolling='no' title='plasma animation canvas | three.js' data-src='//codepen.io/enolic/embed/mAKbpm/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'></iframe>
+            </div>
+
+            <div class="iframe-wrapper">
+                <iframe scrolling='no' title='f4:flower' data-src='//codepen.io/satchmorun/embed/QjJdEX/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'></iframe>
+            </div>
+
+            <div class="iframe-wrapper">
+                <iframe scrolling='no' title='Stardust' data-src='//codepen.io/jeffibacache/embed/xAthu/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'></iframe>
+            </div>
+
+            <div class="iframe-wrapper">
+                <iframe scrolling='no' title='Eye' data-src='http://lab.subskill.com/modules/1d1w/40/' frameborder='no' allowtransparency='true' allowfullscreen='true'></iframe>
+            </div>
+
+            <div class="iframe-wrapper">
+                <iframe scrolling='no' title='CodePen Dots' data-src='//codepen.io/arcs/embed/BzNVRB/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'></iframe>
+            </div>
+
+        </div>
+        
+        
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+        <script>
+
+            $(window).on('scroll', function(){
+
+                $.each($('.iframe-wrapper'), function(i,v){
+
+                    var $frame = $(v).find('iframe');
+                    var pos = $(v).offset().top;
+                    var wScroll = $(window).scrollTop();
+                    var wHeight = $(window).height();
+
+                    if (wScroll > (pos - wHeight) && wScroll < (pos + wHeight)) {
+                        if (!$frame.attr('src')) {
+                            $frame.attr('src', $frame.data('src'));
+                        }
+                    } else {
+                        $frame.attr('src', '');
+                    }
+                });
+            });
+
+            $(window).scroll();
+        </script>
+    </body>
+</html>
